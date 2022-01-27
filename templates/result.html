@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+  <div class="jumbotron jumbotron-fluid" style="padding-top: 2%">
+    <div class="container">
+      <h1 class="display-4">LOAN STATUS PREDICTION</h1>
+      <p class="lead">Simplest way to check your eligiblity to get loan</p>
+    </div>
+  </div>S
+
+  <div>
+    <nav class="navbar bg-primary">
+      <ul class="nav navbar-nav navbar-expand-lg">
+        <li class style="color: black"><a href="{{ url_for('home')}}"
+            style="color: whitesmoke; margin-left: 10px; margin-right: 10px"> Home</a></li>
+
+      </ul>
+
+    </nav>
+  </div>
+  
+  <p style=" font-size: 350%; text-align: center; padding-top: 10%">{% if prediction==1 %}
+  Sorry, You are not eligible for the loan
+  <img class="gif" src="{{ url_for('static', filename='no_loan.webp') }}" alt="Diabetes Image">
+  {% elif prediction==0 %}
+  Congrats, You are eligible for the loan
+  <img class="gif1" src="{{ url_for('static', filename='yes_loan.webp') }}" alt="Not Diabetes Image">
+  {% endif %}</p>
+
+
+</body>
